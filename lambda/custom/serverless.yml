@@ -8,6 +8,9 @@ provider:
   profile: ${opt:profile, self:custom.defaultProfile}
   region: ${opt:region, self:custom.defaultRegion}
 
+plugins:
+  - serverless-webpack
+
 custom:
   stage:  ${opt:stage, self:provider.stage}
   defaultProfile: default
