@@ -5,7 +5,7 @@ const { getAskMessage, getReprompt } = require('./libs/utils')
 const skillBuilder = Alexa.SkillBuilders.standard()
 // handlers
 const LaunchRequestHandler = require('./handlers/LaunchRequest')
-const KarutaIntenttHandler = require('./handlers/KarutaIntent')
+const KarutaIntentHandler = require('./handlers/KarutaIntent')
 
 const RepeatIntentHandler = {
   canHandle: (handlerInput) => canHandle(handlerInput, 'IntentRequest', 'AMAZON.RepeatIntent'),
@@ -78,7 +78,7 @@ const StopSessionHandler = {
 
 exports.handler = skillBuilder
   .addRequestHandlers(
-    KarutaIntenttHandler,
+    KarutaIntentHandler,
     LaunchRequestHandler,
     StopSessionHandler,
     RepeatIntentHandler
