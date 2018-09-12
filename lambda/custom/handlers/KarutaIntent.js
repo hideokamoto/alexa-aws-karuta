@@ -51,7 +51,7 @@ class Response {
         'Will you go next ?'
       ]
     }
-    return actions[this.locale]
+    return getRandomMessage(actions[this.locale])
   }
   getRepropt() {
     const reprompts = {

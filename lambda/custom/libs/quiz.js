@@ -1,5 +1,5 @@
 module.exports = {
-  ja: [
+  'ja-JP': [
     {
       name: 'Amazon WorkSpaces',
       name_kana: 'アマゾン　ワークスペーシス',

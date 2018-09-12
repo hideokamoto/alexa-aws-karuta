@@ -7,7 +7,7 @@ provider:
   memorySize: ${self:custom.memorySize.${self:custom.stage}, self:custom.memorySize.default}
   profile: ${opt:profile, self:custom.defaultProfile}
   region: ${opt:region, self:custom.defaultRegion}
-  logRetentionInDays: ${self:custom.logRetentionInDays.${self:custom.stage}, self:custom.logRetentionInDays.default}
+  logRetentionInDays: 30
   iamRoleStatements:
     - Effect: "Allow"
       Action:
@@ -21,10 +21,6 @@ custom:
   stage:  ${opt:stage, self:provider.stage}
   defaultProfile: default
   defaultRegion: us-east-1
-  logRetentionInDays:
-    dev: "14"
-    prod: "90"
-    default: "3"
   memorySize:
     dev: 128
     prod: 512
