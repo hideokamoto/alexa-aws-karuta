@@ -5,3 +5,12 @@ export const STATES = {
   KARUTA: 'karuta',
   HINT: 'hint'
 }
+export const getSkillName = (locale) => {
+  switch(locale) {
+    case 'ja-JP':
+      return 'AWS カルタ'
+    case 'en-US':
+    default:
+      return 'AWS karuta'
+  }
+}
