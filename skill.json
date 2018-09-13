@@ -3,20 +3,19 @@
     "publishingInformation": {
       "locales": {
         "ja-JP": {
-          "summary": "AWSについて勉強できる、簡単なクイズゲームです。",
+          "summary": "AWSについて勉強できる、簡単なクイズゲーム made by JAWS-UGです。",
           "examplePhrases": [
-            "アレクサ、AWSカルタを開いてゲームをはじめて",
+            "アレクサ、JAWSカルタを開いてゲームをはじめて",
             "カルタ",
             "カルタをはじめて"
           ],
           "keywords": [
             "クラウド",
-            "AWS",
             "クイズ"
           ],
-          "name": "AWSカルタ",
+          "name": "JAWSカルタ",
           "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/c3bf/a98a38738cca497c90622116045e0a5b/APP_ICON?versionId=hJAjXssfyI_H3Eb8Zbd_mmiS6IxWfCWx&AWSAccessKeyId=AKIAIEYXX6DHY7O4XWMA&Expires=1535202955&Signature=il51ZWLM%2Fqos4EVbYGfIeJOjUwI%3D",
-          "description": "AWSについて勉強できる、簡単なクイズゲームです。\n読み上げられた紹介文と一致するサービスの番号を答えてください。\n\nこのデータはJAWS-UGで作成されたデータを利用しています。\nhttps://github.com/jaws-ug/AWS-Karuta\n\n## クイズモード\nアレクサが読み上げる紹介文に一致するサービスの名前を１〜３の番号で答えるクイズゲームです。\n\n## カルタモード\nカルタ用のカードを利用して遊ぶモードです。\nhttps://github.com/jaws-ug/AWS-Karuta\n\nアレクサはサービス紹介文を読み上げた後５秒間待機します。\nその間に一致するサービス名のカードを探して取りましょう。\n\nカルタカードがない場合でも、早押しクイズのようにみんなでサービス名を予想しあうことで楽しむことができます。",
+          "description": "JAWS-UGで作られた、カルタゲームのためのスキルです。\n読み上げられた紹介文と一致するサービスの札をとりましょう。。\nアレクサはサービス紹介文を読み上げた後５秒間待機します。\nその間に一致するサービス名のカードを探して取りましょう。\n\nカルタカードがない場合でも、早押しクイズのようにみんなでサービス名を予想しあうことで楽しむことができます。\n\nこのデータはJAWS-UGで作成されたデータを利用しています。\nhttps://github.com/jaws-ug/AWS-Karuta",
           "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/f996/5cd708633b714d599a5141ec1efb05c7/APP_ICON_LARGE?versionId=ZpI57VDPfxBaSpCr5a9AWVRYYD.rizqc&AWSAccessKeyId=AKIAIEYXX6DHY7O4XWMA&Expires=1535202955&Signature=xbjKWta8wUM0o7wSrc6cUvtcWMM%3D"
         }
       },
