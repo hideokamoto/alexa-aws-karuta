@@ -5,22 +5,22 @@ const { getSkillName, STATES } = require('../constants')
 const { getLocale } = require('../libs/utils')
 
 class Response {
-  constructor(handlerInput) {
+  constructor (handlerInput) {
     this.handlerInput = handlerInput
     this.locale = getLocale(handlerInput)
     this.skillName = getSkillName(this.locale)
   }
-  getSkillName() {
+  getSkillName () {
     return this.skillName
   }
-  getSpeech() {
+  getSpeech () {
     const speech = {
       'ja-JP': `${this.skillName}へようこそ。`,
       'en-US': `Welcome to the ${this.skillName}`
     }
     return speech[this.locale]
   }
-  getRepropt() {
+  getRepropt () {
     const reprompts = {
       'ja-JP': [
         'カルタゲームを始めますか？',
@@ -46,7 +46,7 @@ const LaunchRequestHandler = {
     const skillName = response.getSkillName()
 
     handlerInput.attributesManager.setSessionAttributes({
-        state: STATES.start
+      state: STATES.start
     })
     return handlerInput.responseBuilder
       .speak(speech + reprompt)

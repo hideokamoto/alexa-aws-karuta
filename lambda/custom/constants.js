@@ -5,7 +5,7 @@ export const STATES = {
   HINT: 'hint'
 }
 export const getSkillName = (locale) => {
-  switch(locale) {
+  switch (locale) {
     case 'ja-JP':
       return 'JAWS カルタ'
     case 'en-US':

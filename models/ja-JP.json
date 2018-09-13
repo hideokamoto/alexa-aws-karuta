@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "awsカルタ",
+      "invocationName": "jawsカルタ",
       "intents": [
         {
           "name": "KarutaIntent",
@@ -9,6 +9,7 @@
             "ゲームを開始して",
             "ゲームスタート",
             "ゲームを開始",
+            "ゲーム開始",
             "ゲームを始めて",
             "ゲーム",
             "カルタゲームがやりたい",

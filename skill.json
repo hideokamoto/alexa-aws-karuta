@@ -2,8 +2,24 @@
   "manifest": {
     "publishingInformation": {
       "locales": {
+        "en-US": {
+          "summary": "Simple Karuta game skill about AWS serivce, the skill made by JAWS-UG (Japan AWS User Group)",
+          "examplePhrases": [
+            "Alexa open JAWS karuta",
+            "play karuta",
+            "start the game"
+          ],
+          "keywords": [
+            "karuta",
+            "cloud"
+          ],
+          "name": "JAWS Karuta",
+          "description": "To play karuta game about AWS serivces.\n In Japan, AWS user group named JAWS-UG(Japan AWS User Group) created karuta game to learn AWS services.\nAnd we play the game with Alexa to lead the quiz content.\n\n## How to play\n1. Call 'Alexa open JAWS karuta, play the game.\n2. She tell us some AWS service description.\n3. She will wait us to think the service name 5 seconds\n4. Finally, She says the correct service name.\n\n## If you have no karuta card ?\n Nevermind !\nThe skill can play as simple quiz game !",
+          "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/c3bf/a98a38738cca497c90622116045e0a5b/APP_ICON?versionId=hJAjXssfyI_H3Eb8Zbd_mmiS6IxWfCWx&AWSAccessKeyId=AKIAIEYXX6DHY7O4XWMA&Expires=1535202955&Signature=il51ZWLM%2Fqos4EVbYGfIeJOjUwI%3D",
+          "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/f996/5cd708633b714d599a5141ec1efb05c7/APP_ICON_LARGE?versionId=ZpI57VDPfxBaSpCr5a9AWVRYYD.rizqc&AWSAccessKeyId=AKIAIEYXX6DHY7O4XWMA&Expires=1535202955&Signature=xbjKWta8wUM0o7wSrc6cUvtcWMM%3D"
+        },
         "ja-JP": {
-          "summary": "AWSについて勉強できる、簡単なクイズゲーム made by JAWS-UGです。",
+          "summary": "AWSについて勉強できる、カルタゲーム made by JAWS-UGです。",
           "examplePhrases": [
             "アレクサ、JAWSカルタを開いてゲームをはじめて",
             "カルタ",
@@ -20,7 +36,7 @@
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Alexa, launch cloud quiz game\nAlexa, launch cloud quiz game start quiz game\nAlexa, launch cloud quiz game start karuta game",
+      "testingInstructions": "[en-US]\nAlexa, launch jaws karuta\nAlexa, launch jaws karuta start karuta game\nAlexa, launch jaws karuta start\n\n[ja-JP]アレクサ、ジョーズ カルタを開いて\nカルタを開始\nアレクサ、ジョーズカルタでゲーム開始",
       "category": "KNOWLEDGE_AND_TRIVIA",
       "distributionCountries": []
     },

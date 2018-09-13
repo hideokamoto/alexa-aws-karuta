@@ -1,0 +1,50 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "jaws karuta",
+      "intents": [
+        {
+          "name": "KarutaIntent",
+          "samples": [
+            "game begin",
+            "game start",
+            "start the karuta game",
+            "play the karuta game",
+            "begin the karuta game",
+            "start karuta game",
+            "play karuta game",
+            "begin karuta game",
+            "start karuta",
+            "play karuta",
+            "begin karuta",
+            "start the game",
+            "play the game",
+            "begin the game",
+            "start game",
+            "play game",
+            "begin game",
+            "start",
+            "play",
+            "begin",
+            "karuta"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent"
+        },
+        {
+          "name": "AMAZON.NoIntent"
+        },
+        {
+          "name": "AMAZON.HelpIntent"
+        },
+        {
+          "name": "AMAZON.StopIntent"
+        },
+        {
+          "name": "AMAZON.CancelIntent"
+        }
+      ]
+    }
+  }
+}

@@ -6,18 +6,18 @@ const quizItems = require('../libs/quiz')
 const { getLocale } = require('../libs/utils')
 
 class Response {
-  constructor(handlerInput) {
+  constructor (handlerInput) {
     this.handlerInput = handlerInput
     this.locale = getLocale(handlerInput)
     this.skillName = getSkillName(this.locale)
   }
-  getSkillName() {
+  getSkillName () {
     return this.skillName
   }
-  getQuiz() {
+  getQuiz () {
     return getRandomMessage(quizItems[this.locale])
   }
-  getSpeech() {
+  getSpeech () {
     const quiz = this.getQuiz()
     const speech = {
       'ja-JP': [
@@ -35,7 +35,7 @@ class Response {
         "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
         "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
         '<p>It is time !</p>',
-        `<p>The correct anser is <break time="0.3s" />${quiz.name_kana}.</p>`
+        `<p>The correct anser is <break time="0.3s" />${quiz.name}.</p>`
       ]
     }
     return speech[this.locale].join('')
@@ -53,7 +53,7 @@ class Response {
     }
     return getRandomMessage(actions[this.locale])
   }
-  getRepropt() {
+  getRepropt () {
     const reprompts = {
       'ja-JP': [
         'カルタゲームを続けますか？終了する場合は、ストップと話しかけてください。',

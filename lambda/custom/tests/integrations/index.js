@@ -15,19 +15,19 @@ describe('日本語', () => {
         repromptsLike: 'ゲームを始めますか？'
       },
       {
-          request: alexaTest.getIntentRequest('KarutaIntent'),
-          saysLike: 'カルタを始めます。',
-          repromptsLike: '続けますか？'
+        request: alexaTest.getIntentRequest('KarutaIntent'),
+        saysLike: 'カルタを始めます。',
+        repromptsLike: '続けますか？'
       },
       {
-          request: alexaTest.getIntentRequest('AMAZON.YesIntent'),
-          saysLike: 'カルタを始めます。',
-          repromptsLike: '続けますか？'
+        request: alexaTest.getIntentRequest('AMAZON.YesIntent'),
+        saysLike: 'カルタを始めます。',
+        repromptsLike: '続けますか？'
       },
       {
-          request: alexaTest.getIntentRequest('AMAZON.StopIntent'),
-          saysLike: 'また',
-          shouldEndSession: true
+        request: alexaTest.getIntentRequest('AMAZON.StopIntent'),
+        saysLike: 'また',
+        shouldEndSession: true
       }
     ])
   })
@@ -43,8 +43,8 @@ describe('Ensligh', () => {
         repromptsLike: 'game'
       },
       {
-          request: alexaTest.getIntentRequest('KarutaIntent'),
-          saysLike: "OK. Let's start the game."
+        request: alexaTest.getIntentRequest('KarutaIntent'),
+        saysLike: "OK. Let's start the game."
       }
     ])
   })
