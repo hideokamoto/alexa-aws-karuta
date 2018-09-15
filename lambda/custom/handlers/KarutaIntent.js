@@ -25,22 +25,37 @@ class Response {
       'ja-JP': [
         '<p>カルタを始めます。</p>',
         `<p>問題、${quiz.description}</p>`,
-        '<p>このサービスはなんでしょう？</p>',
-        "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
-        "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
-        `<p>時間となりました。正解は<break time="0.3s" />${quiz.name_kana}です。</p>`
+        '<p>このサービスはなんでしょう？</p>'
       ],
       'en-US': [
         "<p>OK. Let's start the game.</p>",
         '<p>Question, what is the service description?</p>',
-        `<p>${quiz.description}</p>`,
-        "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
-        "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
+        `<p>${quiz.description}</p>`
+      ]
+    }
+    const timers = getRandomMessage([
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/nature/amzn_sfx_ocean_wave_surf_01.mp3'/>"
+    ])
+    const finishBell = getRandomMessage([
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
+      "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_glasses_clink_01.mp3'/>"
+    ])
+    const answer = {
+      'ja-JP': [
+        `<p>時間となりました。正解は<break time="0.3s" />${quiz.name_kana}です。</p>`
+      ],
+      'en-US': [
         '<p>It is time !</p>',
         `<p>The correct anser is <break time="0.3s" />${quiz.name}.</p>`
       ]
     }
-    return speech[this.locale].join('')
+    return `${speech[this.locale].join('')}${timers}${finishBell}${answer[this.locale].join('')}`
   }
   getNextAction () {
     const actions = {
@@ -97,7 +112,9 @@ const KarutaIntenttHandler = {
   canHandle: (handlerInput) => {
     if (canHandle(handlerInput, 'IntentRequest', 'KarutaIntent')) return true
     const attributes = handlerInput.attributesManager.getSessionAttributes()
-    if (canHandle(handlerInput, 'IntentRequest', 'AMAZON.YesIntent') && attributes.state === STATES.start) return true
+    console.log('Attributes: %j', attributes)
+    if (canHandle(handlerInput, 'IntentRequest', 'AMAZON.YesIntent')) return true
+    if (canHandle(handlerInput, 'IntentRequest', 'AMAZON.NextIntent')) return true
     return false
   },
   handle: (handlerInput) => {
@@ -105,12 +122,11 @@ const KarutaIntenttHandler = {
     const response = new Response(handlerInput)
     const attributes = handlerInput.attributesManager.getSessionAttributes()
     const quiz = response.getQuiz()
-    console.log(quiz)
     if (Object.keys(quiz).length === 0) {
       return getFinishedQuizResponse(handlerInput)
     }
     handlerInput.attributesManager.setSessionAttributes({
-      state: attributes.state,
+      state: STATES.start,
       quiz,
       reservedQuiz: getReservedQuiz(attributes, quiz.name)
     })
