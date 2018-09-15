@@ -1,33 +1,14 @@
 const Alexa = require('ask-sdk')
 const { getRandomMessage, canHandle } = require('ask-utils')
-const { getAskMessage, getReprompt, getLocale } = require('./libs/utils')
+const { getLocale } = require('./libs/utils')
 const { STATES } = require('./constants')
 
 const skillBuilder = Alexa.SkillBuilders.standard()
 // handlers
 const LaunchRequestHandler = require('./handlers/LaunchRequest')
 const KarutaIntentHandler = require('./handlers/KarutaIntent')
-
-const RepeatIntentHandler = {
-  canHandle: (handlerInput) => canHandle(handlerInput, 'IntentRequest', 'AMAZON.RepeatIntent'),
-  handle: (handlerInput) => {
-    const { repeatContent } = handlerInput.attributesManager.getSessionAttributes()
-    const ask = getAskMessage()
-    const reprompt = getReprompt()
-    const repromptMessage = `${ask}${reprompt}`
-    if (!repeatContent || !repeatContent.speak) {
-      return handlerInput.responseBuilder
-        .speak(`すみません。コンテンツが見つかりませんでした。${ask}`)
-        .reprompt(repromptMessage)
-        .getResponse()
-    }
-    return handlerInput.responseBuilder
-      .speak(`${repeatContent.speak}${ask}`)
-      .reprompt(reprompt)
-      .withSimpleCard(repeatContent.card.title, repeatContent.card.content)
-      .getResponse()
-  }
-}
+const RepeatIntentHandler = require('./handlers/RepeatIntent')
+const AnswerIntentHandler = require('./handlers/AnswerIntent')
 
 const ErrorHandler = {
   canHandle () {
@@ -65,7 +46,8 @@ const HelpHandler = {
   handle: (handlerInput) => {
     const locale = getLocale(handlerInput)
     handlerInput.attributesManager.setSessionAttributes({
-      state: STATES.start
+      state: STATES.start,
+      quiz: ''
     })
     let speech
     let action
@@ -115,7 +97,8 @@ const StopSessionHandler = {
       return handlerInput.responseBuilder.getResponse()
     }
     handlerInput.attributesManager.setSessionAttributes({
-      lastContent: ''
+      state: '',
+      quiz: ''
     })
     const locale = getLocale(handlerInput)
     if (locale === 'ja-JP') {
@@ -144,8 +127,9 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     KarutaIntentHandler,
     LaunchRequestHandler,
-    StopSessionHandler,
+    AnswerIntentHandler,
     RepeatIntentHandler,
+    StopSessionHandler,
     HelpHandler
   )
   // .withSkillId('amzn1.ask.skill.f35b1223-1ed1-4283-a207-0e5d0fd2ff05')

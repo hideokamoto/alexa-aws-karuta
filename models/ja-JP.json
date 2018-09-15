@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "jawsカルタ",
+      "invocationName": "クラウドクイズゲーム",
       "intents": [
         {
           "name": "KarutaIntent",
@@ -31,6 +31,34 @@
             "カルタゲーム",
             "カルタ"
           ]
+        },{
+          "name": "AnswerIntent",
+          "samples": [
+            "答えを教えてください",
+            "答え教えて",
+            "答えはなんですか",
+            "答えを教えて",
+            "答えは何",
+            "こたえを教えてください",
+            "こたえ教えて",
+            "こたえはなんですか",
+            "こたえをおしえて",
+            "こたえはなに",
+            "こたえ",
+            "答え",
+            "正解を教えてください",
+            "正解教えて",
+            "正解はなんですか",
+            "正解を教えて",
+            "正解はなに",
+            "正解",
+            "サービス名を教えてください",
+            "サービス名教えて",
+            "サービス名はなんですか",
+            "サービス名を教えて",
+            "サービス名は何",
+            "サービス名"
+          ]
         },
         {
           "name": "AMAZON.YesIntent"
@@ -43,6 +71,9 @@
         },
         {
           "name": "AMAZON.StopIntent"
+        },
+        {
+          "name": "AMAZON.RepeatIntent"
         },
         {
           "name": "AMAZON.CancelIntent"

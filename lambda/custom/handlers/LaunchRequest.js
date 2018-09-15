@@ -16,7 +16,7 @@ class Response {
   getSpeech () {
     const speech = {
       'ja-JP': `${this.skillName}へようこそ。`,
-      'en-US': `Welcome to the ${this.skillName}`
+      'en-US': `Welcome to the ${this.skillName} . `
     }
     return speech[this.locale]
   }

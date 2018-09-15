@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "jaws karuta",
+      "invocationName": "cloud quiz game",
       "intents": [
         {
           "name": "KarutaIntent",
@@ -28,6 +28,37 @@
             "begin",
             "karuta"
           ]
+        },{
+          "name": "AnswerIntent",
+          "samples": [
+            "answer",
+            "speak me the answer",
+            "speak me answer",
+            "speak the answer",
+            "speak answer",
+            "tell me the answer",
+            "tell me answer",
+            "tell the answer",
+            "tell answer",
+            "show me the answer",
+            "show me answer",
+            "show the answer",
+            "show answer",
+            "what is the answer",
+            "what's the answer",
+            "what the answer is",
+            "what answer is",
+            "what answer",
+            "the answer",
+            "speak me the service",
+            "speak me service",
+            "speak the service",
+            "speak service",
+            "tell me the service",
+            "tell me service",
+            "tell the service",
+            "tell service"
+          ]
         },
         {
           "name": "AMAZON.YesIntent"
@@ -37,6 +68,9 @@
         },
         {
           "name": "AMAZON.HelpIntent"
+        },
+        {
+          "name": "AMAZON.RepeatIntent"
         },
         {
           "name": "AMAZON.StopIntent"

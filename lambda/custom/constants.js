@@ -10,6 +10,6 @@ export const getSkillName = (locale) => {
       return 'JAWS カルタ'
     case 'en-US':
     default:
-      return 'JAWS karuta game'
+      return 'JAWS Karuta game'
   }
 }

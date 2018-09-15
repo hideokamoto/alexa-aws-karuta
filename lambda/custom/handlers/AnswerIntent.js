@@ -15,6 +15,9 @@ class Response {
   getSkillName () {
     return this.skillName
   }
+  setQuiz (quiz) {
+    this.quiz = quiz
+  }
   getQuiz () {
     return this.quiz
   }
@@ -22,20 +25,11 @@ class Response {
     const quiz = this.getQuiz()
     const speech = {
       'ja-JP': [
-        '<p>カルタを始めます。</p>',
-        `<p>問題、${quiz.description}</p>`,
-        '<p>このサービスはなんでしょう？</p>',
-        "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
         "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
-        `<p>時間となりました。正解は<break time="0.3s" />${quiz.name_kana}です。</p>`
+        `<p>正解は<break time="0.3s" />${quiz.name_kana}です。</p>`
       ],
       'en-US': [
-        "<p>OK. Let's start the game.</p>",
-        '<p>Question, what is the service description?</p>',
-        `<p>${quiz.description}</p>`,
-        "<audio src='https://s3.amazonaws.com/ask-soundlibrary/foley/amzn_sfx_clock_ticking_long_01.mp3'/>",
         "<audio src='https://s3.amazonaws.com/ask-soundlibrary/musical/amzn_sfx_bell_timer_01.mp3'/>",
-        '<p>It is time !</p>',
         `<p>The correct anser is <break time="0.3s" />${quiz.name}.</p>`
       ]
     }
@@ -66,32 +60,46 @@ class Response {
     }
     return getRandomMessage(reprompts[this.locale])
   }
+  getUndefinedStateResponse () {
+    const speech = {
+      'ja-JP': [
+        'すみません。上手く聞き取れませんでした。カルタを始めますか？',
+        '上手に聞き取れませんでした。カルタを始めますか？'
+      ],
+      'en-US': [
+        'Sorry, I beg your pardon ? Will you start the game ?',
+        "Sorry, I couldn't here you speach ? Will you start the karuta game ?"
+      ]
+    }
+    return getRandomMessage(speech[this.locale])
+  }
 }
 
-const KarutaIntenttHandler = {
-  canHandle: (handlerInput) => {
-    if (canHandle(handlerInput, 'IntentRequest', 'KarutaIntent')) return true
-    const attributes = handlerInput.attributesManager.getSessionAttributes()
-    if (canHandle(handlerInput, 'IntentRequest', 'AMAZON.YesIntent') && attributes.state === STATES.start) return true
-    return false
-  },
+const IntentHandler = {
+  canHandle: (handlerInput) => canHandle(handlerInput, 'IntentRequest', 'AnswerIntent'),
   handle: (handlerInput) => {
-    console.log('KarutaIntentt: %j', handlerInput)
+    console.log('AnswerIntent: %j', handlerInput)
     const response = new Response(handlerInput)
-    const attributes = handlerInput.attributesManager.getSessionAttributes()
-    handlerInput.attributesManager.setSessionAttributes({
-      state: attributes.state,
-      quiz: response.getQuiz()
-    })
-    const quiz = response.getQuiz()
+    const { quiz } = handlerInput.attributesManager.getSessionAttributes()
     const reprompt = response.getRepropt()
-    const speech = `${response.getSpeech()}${response.getNextAction()}`
     const skillName = response.getSkillName()
+    if (!quiz || !quiz.description) {
+      handlerInput.attributesManager.setSessionAttributes({
+        state: STATES.start
+      })
+      return handlerInput.responseBuilder
+        .speak(response.getUndefinedStateResponse())
+        .reprompt(reprompt)
+        .withSimpleCard(skillName, quiz.name)
+        .getResponse()
+    }
+    response.setQuiz(quiz)
+    const speech = `${response.getSpeech()}${response.getNextAction()}`
     return handlerInput.responseBuilder
       .speak(speech)
       .reprompt(reprompt)
-      .withSimpleCard(skillName, quiz.description)
+      .withSimpleCard(skillName, quiz.name)
       .getResponse()
   }
 }
-module.exports = KarutaIntenttHandler
+module.exports = IntentHandler
