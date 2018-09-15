@@ -1,4 +1,5 @@
-const { canHandle, getRandomMessage } = require('ask-utils')
+const Alexa = require('ask-sdk-core')
+const { canHandle, getRandomMessage, supportsDisplay } = require('ask-utils')
 const { getSkillName, STATES } = require('../constants')
 const quizItems = require('../libs/quiz')
 
@@ -48,6 +49,26 @@ class Response {
     }
     return getRandomMessage(actions[this.locale])
   }
+  getDisplayDirective () {
+    if (!supportsDisplay(this.handlerInput)) return {}
+    const quiz = this.getQuiz()
+    if (!quiz.image) return {}
+    const image = new Alexa.ImageHelper().addImageInstance(quiz.image).getImage()
+    const textContent = new Alexa.PlainTextContentHelper()
+      .withPrimaryText('Answer is ...')
+      .withSecondaryText(quiz.name)
+      .withTertiaryText(quiz.description)
+      .getTextContent()
+    const object = {
+      type: 'BodyTemplate3',
+      backButton: 'HIDDEN',
+      image,
+      title: this.skillName,
+      textContent,
+      token: 'helloAlexa'
+    }
+    return object
+  }
   getRepropt () {
     const reprompts = {
       'ja-JP': [
@@ -95,11 +116,13 @@ const IntentHandler = {
     }
     response.setQuiz(quiz)
     const speech = `${response.getSpeech()}${response.getNextAction()}`
-    return handlerInput.responseBuilder
+    const directive = response.getDisplayDirective()
+    const retVal = handlerInput.responseBuilder
       .speak(speech)
       .reprompt(reprompt)
       .withSimpleCard(skillName, quiz.name)
-      .getResponse()
+    if (Object.keys(directive).length > 0) retVal.addRenderTemplateDirective(directive)
+    return retVal.getResponse()
   }
 }
 module.exports = IntentHandler
