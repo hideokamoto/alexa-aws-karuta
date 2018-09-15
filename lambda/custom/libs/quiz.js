@@ -60,6 +60,286 @@ module.exports = {
       name: 'Amazon Elastic MapReduce',
       description: `It is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.
       It simplifies big data processing, providing a managed Hadoop framework that makes it easy, fast, and cost-effective for you to distribute and process vast amounts of your data across dynamically scalable Amazon EC2 instances.`
+    }, {
+      name: 'Amazon Simple Email Service (Amazon SES)',
+      description: 'It is a cost-effective email service built on the reliable and scalable infrastructure that Amazon.com developed to serve its own customer base.'
+    }, {
+      name: 'Amazon SWF (Simple Workflow Service)',
+      description: `It is a fully managed workflow service for building scalable, resilient applications.It acts as the coordination hub for all of the different components of your application.`
+    }, {
+      name: 'Amazon AppStream',
+      description: 'This enables you to stream your applications with high-resolution graphics from the cloud.'
+    }, {
+      name: 'Amazon EC2 (Elastic Compute Cloud)',
+      description: 'It encourages scalable deployment of applications by providing a web service through which a user can boot an Amazon Machine Image to configure a virtual machine.'
+    }, {
+      name: 'Amazon EC2 Container Registry (ECR)',
+      description: `A fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images.
+      It can be integrated into Amazon EC2 Container Service (ECS) `
+    }, {
+      name: 'Amazon EC2 Container Service (ECS)',
+      description: `A Docker container supported management service. You can easily manage clusters of Amazon Elastic Compute Cloud (Amazon EC2). `
+    }, {
+      name: 'AmazonMachine Image(AMI)',
+      description: 'It has OS and software installed and has the ability to save a disk image of a virtual machine.  '
+    }, {
+      name: 'AWS Elastic Beanstalk',
+      description: "Using git and IDE in the AWS cloud,  it's an easy and quick application deployment service. "
+    }, {
+      name: 'Amazon Elastic Load Balancer(ELB)',
+      description: 'It automatically distributes incoming application traffic across multiple Amazon EC2 instances '
+    }, {
+      name: 'AWS Lambda',
+      description: `It is a compute service where you can upload your code and this service can run the code on your behalf using AWS infrastructure. 
+      You can easily build data processing triggers for AWS services like Amazon S3 and Amazon DynamoDB.  `
+    }, {
+      name: 'AWS Database Migration Service',
+      description: 'This service supports homogeneous migrations such as Oracle to Oracle, and also heterogeneous migrations between different database platforms, such as Oracle to MySQL or MySQL to Amazon Aurora.'
+    }, {
+      name: 'Amazon ElastiCache',
+      description: 'This service improves the performance of web applications by retrieving information from managed in-memory caches such as memcached or Redis.'
+    }, {
+      name: 'Amazon Relational Database Service(RDS)',
+      description: `A full managed RDBMS service.
+      Complex administration processes like patching the database software, backing up databases and enabling point-in-time recovery are managed automatically.
+      It uses MySQL, Oracle Database, SQLServer and PostgreSQL. `
+    }, {
+      name: 'Amazon Redshift',
+      description: `It's a full-managed, petabyte-scale data warehouse service.
+      After you provision your cluster, you can upload your data set and then perform data analysis queries on this. `
+    }, {
+      name: 'Amazon EBS Snapshots',
+      description: 'Incremental backups on EBS that, when saved to Amazon S3, only the blocks on the device change.'
+    }, {
+      name: 'Amazon DynamoDB',
+      description: "fully managed NoSQL database service. The seamless reading and writing performance  can be designated as a 'unit', and it's possible to change it anytime as the need arises."
+    }, {
+      name: 'AWS CodeCommit',
+      description: 'A secure, highly scalable, managed source control service that hosts private Git repositories.'
+    }, {
+      name: 'AWS IoT',
+      description: `This service is a managed cloud platform that lets connected devices easily and securely interact with cloud applications and other devices. 
+      This service can support billions of devices and trillions of messages, and can process and route those messages to AWS endpoints and to other devices reliably and securely. 
+      `
+    }, {
+      name: 'AWS CloudFormation',
+      description: `It can manage a collection of related AWS resources on using templates.
+      It also can deploy and update a template and its associated collection of resources (called a stack)`
+    }, {
+      name: 'AWS CloudTrail',
+      description: 'This records the calls to AWS APIs and has the function capable of saving the log file to the specified S3 bucket. Each time the log file is stored, it is possible to send a notification to Amazon SNS topics. '
+    }, {
+      name: 'Amazon CloudWatch',
+      description: 'Together with AWS cloud resources, this is a service that can monitor the applications that run on AWS. It also can monitor billing. '
+    }, {
+      name: 'AWS Config',
+      description: `A configuration service that provides you with a AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
+      The resource inventory changes the status of the configuration items on the S3 log.
+      It is possible to refer to the configuration history of a resource  to view changes in chronological order. `
+    }, {
+      name: 'AWS OpsWorks',
+      description: 'Chef recipes that can be utilized to setup the DevOps solutions services. It manages a logical model of the layers of various resources'
+    }, {
+      name: 'AWS Mobile Hub',
+      description: `A new console for developing mobile apps.
+      The user can develop applications such as user authentication, data storage, content delivery, backend logic, analytics dashboards, and push notifications.`
+    }, {
+      name: 'AWS CodeDeploy',
+      description: "It provides automated code deployment  and updates to EC2 instances. It's able to release a new function easily and quickly while avoiding down time."
+    }, {
+      name: 'AWS CodePipeline',
+      description: `It's a continuous delivery service for fast and reliable application updates.
+      When you change a code, you can build, test, and deploy based on the release process models you define. `
+    }, {
+      name: 'Amazon Cognito',
+      description: 'Not only does it provide user authentication and synchronization of data, this simple service safely synchronizes a users application data between mobile devices.'
+    }, {
+      name: 'AWS Device Farm',
+      description: 'Test service for Android, iOS, FireOS applications.'
+    }, {
+      name: 'Amazon Mobile Analytics',
+      description: `With it, you can measure app usage and app revenue. By tracking key trends such as new vs. 
+      returning users, app revenue, user retention, and custom in-app behavior events, you can make data-driven decisions to increase engagement and monetization for your app. 
+      You can view key charts in the Mobile Analytics console and automatically export your app event data to Amazon S3 and Amazon Redshift to run custom analysis.`
+    }, {
+      name: 'Amazon Simple Notification Service (SNS)',
+      description: `It is a fast, flexible, fully managed push notification service that lets you send individual messages or to fan-out messages to large numbers of recipients.
+      It makes it simple and cost effective to send push notifications to mobile device users, email recipients or even send messages to other distributed services.`
+    }, {
+      name: 'AWS Direct Connect(DX)',
+      description: 'It makes it easy to establish a dedicated network connection from your premises to AWS'
+    }, {
+      name: 'Amazon Virtual Private Cloud(VPC)',
+      description: 'It lets you provision a logically isolated section of the Amazon Web Services (AWS) cloud where you can launch AWS resources in a virtual network that you define.'
+    }, {
+      name: 'Amazon Route53',
+      description: 'It is a highly available and scalable cloud Domain Name System (DNS) web service.'
+    }, {
+      name: 'AWS CloudHSM',
+      description: `It helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated Hardware Security Module appliances within the AWS cloud.
+      With it, you control the encryption keys and cryptographic operations performed by the Hardware Security Module appliances.`
+    }, {
+      name: 'AWS Directory Service',
+      description: 'It makes it easy to setup and run Microsoft Active Directory (AD) in the AWS cloud, or connect your AWS resources with an existing on-premises Microsoft Active Directory.'
+    }, {
+      name: 'AWS Identify and Access Management(IAM)',
+      description: `It enables you to securely control access to AWS services and resources for your users.
+      Using it, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.`
+    }, {
+      name: 'AWS Key Management Service (KMS)',
+      description: 'It is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Modules (HSMs) to protect the security of your keys.'
+    }, {
+      name: 'AWS Service Catalog',
+      description: `It is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
+      Config Rules enables you to create rules that automatically check the configuration of AWS resources recorded by it.`
+    }, {
+      name: 'AWS Trusted Advisor',
+      description: 'An online resource to help you reduce cost, increase performance, and improve security by optimizing your AWS environment, It provides real time guidance to help you provision your resources following AWS best practices.'
+    }, {
+      name: 'AWS Web Application Firewall(WAF)',
+      description: 'It is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.'
+    }, {
+      name: 'AWS Import/Export',
+      description: 'It is a service that accelerates transferring large amounts of data into and out of AWS using physical storage appliances, bypassing the Internet.'
+    }, {
+      name: 'Amazon CloudFront',
+      description: 'It is a global content delivery network (CDN) service that accelerates delivery of your websites, APIs, video content or other web assets.'
+    }, {
+      name: 'Amazon Glacier',
+      description: "It is a secure, durable, and extremely low-cost cloud storage service for data archiving and long-term backup. You can access this through the Management Console or Amazon S3 API's to manage data."
+    }, {
+      name: 'AWS Snowball',
+      description: 'A petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud. Using it.'
+    }, {
+      name: 'Amazon Simple Storage Service(S3)',
+      description: 'It is a simple web service interface that stores and retrieves any amount of data from anywhere on the web. It also provides static website hosting. '
+    }, {
+      name: 'AWS Storage Gateway',
+      description: `It is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization’s on-premises IT environment and AWS’s storage infrastructure.
+      It can connect to the iSCSI interface which provides virtual storage.`
+    }, {
+      name: 'Amazon Elastic File System (EFS)',
+      description: "It's a Network File System version 4 protocol supported elastic file storage service."
+    }, {
+      name: 'Amazon Inspector',
+      description: 'It is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. '
+    }, {
+      name: 'AWS Certificate Manager',
+      description: 'It is a service that lets you easily provision, manage, and deploy Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services.'
+    }, {
+      name: 'Amazon EC2 Auto Scaling',
+      description: `It can help you ensure that your application always has the right amount of capacity to handle the current traffic demands.
+      It can dynamically increase and decrease capacity as needed.`
+    }, {
+      name: 'Amazon EC2 Spot Instance',
+      description: 'This enables you to bid on unused EC2 instances, which can lower your Amazon EC2 costs significantly. '
+    }, {
+      name: 'Internet Gateway',
+      description: 'It is a horizontally scaled, redundant, and highly available VPC component that allows communication between instances in your VPC and the Internet. '
+    }, {
+      name: 'Virtua Private Gateway',
+      description: 'This VPC component refers to the connection between your VPC and your own network. '
+    }, {
+      name: 'VPC Peering',
+      description: 'It allows you to route traffic between the VPCs using private IP addresses; as if they are part of the same network.'
+    }, {
+      name: 'Hosted Zone',
+      description: `A collection of resource record sets that Amazon Route 53 hosts.
+      Like a traditional DNS zone file, it represents a collection of records that are managed together under a single domain name.
+     For each public one of these that you create, Amazon Route 53 automatically creates a name server (NS) resource record set and a start of authority (SOA) resource record set. `
+    }, {
+      name: 'Amazon S3 Bucket',
+      description: `To store an object in Amazon S3, you must create this container.
+      The name you choose must be unique across all existing bucket names in Amazon S3.`
+    }, {
+      name: 'Amazon CloudFront Edge Locations',
+      description: 'Using a network of them around the world, Amazon CloudFront caches copies of your static content close to viewers, lowering latency when they download your objects and giving you the high, sustained data transfer rates needed to deliver large popular objects to end users at scale.'
+    }, {
+      name: 'Amazon Elastic Block Store',
+      description: "It provides block level storage volumes for use with EC2 instances. It's volumes are attached to an EC2 instance are exposed as storage volumes that persist independently from the life of the instance. "
+    }, {
+      name: 'AWSArtifact',
+      description: 'An audit and compliance portal for on-demand access to download AWS compliance reports and manage select agreements like the Business Associate Addendum and the Nondisclosure Agreement. '
+    }, {
+      name: 'AWSBatch',
+      description: 'It enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS.'
+    }, {
+      name: 'AWS Application Discovery Service',
+      description: 'It helps enterprise customers plan migration projects by gathering information about their on-premises data centers like discovering On-Premises Infrastructure, identify server dependencies and measuring server performance. '
+    }, {
+      name: 'AWS CodeBuild',
+      description: 'It is a fully managed build service that compiles source code, runs tests, and produces software packages that are ready to deploy. '
+    }, {
+      name: 'AWS Greengrass',
+      description: `It is software that lets you run local compute, messaging, data caching, and sync capabilities for connected devices in a secure way.
+      connected devices can run AWS Lambda functions, keep device data in sync, and communicate with other devices securely – even when not connected to the Internet. `
+    }, {
+      name: 'AWSManagedServices',
+      description: `It provides ongoing management of your AWS infrastructure so you can focus on your applications.
+      By implementing best practices to maintain your infrastructure, It helps to reduce your operational overhead and risk.`
+    }, {
+      name: 'AWSOrganizations',
+      description: `It offers policy-based management for multiple AWS accounts.
+      You can create groups of accounts and then apply policies to those groups. `
+    }, {
+      name: 'AWS Server Migration Service',
+      description: `It is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS.
+      It allows you to automate, schedule, and track incremental replications of live server volumes, making it easier for you to coordinate large-scale server migrations. `
+    }, {
+      name: 'AWS Shield',
+      description: 'It is a managed Distributed Denial of Service (DDoS) protection service that safeguards web applications running on AWS. There are two tiers of it - Standard and Advanced.'
+    }, {
+      name: 'AWS Step Functions',
+      description: `It makes it easy to coordinate the components of distributed applications and microservices using visual workflows.
+      It is part of the AWS Serverless Platform, and makes it simple to orchestrate AWS Lambda functions for serverless applications.`
+    }, {
+      name: 'AWS X-Ray',
+      description: `It helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture.
+      You can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors. `
+    }, {
+      name: 'Amazon Athena',
+      description: 'It is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. It is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.'
+    }, {
+      name: 'Amazon Game Lift',
+      description: 'It is a managed service for deploying, operating, and scaling dedicated game servers for session-based multiplayer games. '
+    }, {
+      name: 'Amazon Lex',
+      description: 'It is a service for building conversational interfaces into any application using voice and text. '
+    }, {
+      name: 'Amazon Lightsail',
+      description: 'You can launch a virtual private server (VPS) with just a few clicks.'
+    }, {
+      name: 'Amazon Pinpoint',
+      description: `It makes it easy to message users directly from your application or backend service, or run targeted campaigns to drive user engagement.
+      Youcan understand user behavior, select the best channel to engage users, determine the most effective messages to send, schedule the best time to deliver the messages, and then track user engagement.`
+    }, {
+      name: 'Amazon Polly',
+      description: 'It is me. It is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products.'
+    }, {
+      name: 'Amazon Rekognition',
+      description: 'It is a service that makes it easy to add image analysis to your applications with deep learning technology . '
+    }, {
+      name: 'Amazon Chime',
+      description: 'It is a communications service that transforms online meetings with a secure, easy-to-use application that you can trust.'
+    }, {
+      name: 'Amazon Macie',
+      description: `It is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS.
+      Itrecognizes sensitive data such as personally identifiable information (PII) or intellectual property, and provides you with dashboards and alerts that give visibility into how this data is being accessed or moved.`
+    }, {
+      name: 'Amzon Connect',
+      description: 'It is a self-service, cloud-based contact center service that makes it easy for any business to deliver better customer service at lower cost. '
+    }, {
+      name: 'Amazon EKS',
+      description: 'This service makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS. '
+    }, {
+      name: 'AWS Cloud9',
+      description: 'This is a cloud-based IDE that lets you write, run, and debug your code with just a browser.'
+    }, {
+      name: 'Amazon SageMaker',
+      description: 'It is a fully-managed platform that enables developers and data scientists to quickly and easily build, train, and deploy machine learning models at any scale'
+    }, {
+      name: 'AWS Fargate',
+      description: 'You can run containers without managing servers or clusters. You no longer have to provision, configure, and scale clusters of virtual machines to run containers.'
     }
   ],
   'ja-JP': [
