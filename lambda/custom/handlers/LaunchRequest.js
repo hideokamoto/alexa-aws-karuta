@@ -46,7 +46,8 @@ const LaunchRequestHandler = {
     const skillName = response.getSkillName()
 
     handlerInput.attributesManager.setSessionAttributes({
-      state: STATES.start
+      state: STATES.start,
+      reservedQuiz: []
     })
     return handlerInput.responseBuilder
       .speak(speech + reprompt)

@@ -258,10 +258,10 @@ module.exports = {
       name: 'Amazon Elastic Block Store',
       description: "It provides block level storage volumes for use with EC2 instances. It's volumes are attached to an EC2 instance are exposed as storage volumes that persist independently from the life of the instance. "
     }, {
-      name: 'AWSArtifact',
+      name: 'AWS Artifact',
       description: 'An audit and compliance portal for on-demand access to download AWS compliance reports and manage select agreements like the Business Associate Addendum and the Nondisclosure Agreement. '
     }, {
-      name: 'AWSBatch',
+      name: 'AWS Batch',
       description: 'It enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS.'
     }, {
       name: 'AWS Application Discovery Service',
@@ -274,11 +274,11 @@ module.exports = {
       description: `It is software that lets you run local compute, messaging, data caching, and sync capabilities for connected devices in a secure way.
       connected devices can run AWS Lambda functions, keep device data in sync, and communicate with other devices securely – even when not connected to the Internet. `
     }, {
-      name: 'AWSManagedServices',
+      name: 'AWS Managed Services',
       description: `It provides ongoing management of your AWS infrastructure so you can focus on your applications.
       By implementing best practices to maintain your infrastructure, It helps to reduce your operational overhead and risk.`
     }, {
-      name: 'AWSOrganizations',
+      name: 'AWS Organizations',
       description: `It offers policy-based management for multiple AWS accounts.
       You can create groups of accounts and then apply policies to those groups. `
     }, {

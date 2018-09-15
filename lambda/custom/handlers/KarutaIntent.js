@@ -1,16 +1,17 @@
 const { canHandle, getRandomMessage } = require('ask-utils')
 const { getSkillName, STATES } = require('../constants')
-const quizItems = require('../libs/quiz')
 
 // utils
 const { getLocale } = require('../libs/utils')
+const { generateQuiz } = require('../libs/quizUtils')
 
 class Response {
   constructor (handlerInput) {
     this.handlerInput = handlerInput
     this.locale = getLocale(handlerInput)
     this.skillName = getSkillName(this.locale)
-    this.quiz = getRandomMessage(quizItems[this.locale])
+    const attributes = this.handlerInput.attributesManager.getSessionAttributes()
+    this.quiz = generateQuiz(attributes, this.locale)
   }
   getSkillName () {
     return this.skillName
@@ -68,6 +69,12 @@ class Response {
   }
 }
 
+const getReservedQuiz = (attributes, quiz) => {
+  const reservedQuiz = attributes.reservedQuiz || []
+  reservedQuiz.push(quiz)
+  return reservedQuiz
+}
+
 const KarutaIntenttHandler = {
   canHandle: (handlerInput) => {
     if (canHandle(handlerInput, 'IntentRequest', 'KarutaIntent')) return true
@@ -79,11 +86,12 @@ const KarutaIntenttHandler = {
     console.log('KarutaIntentt: %j', handlerInput)
     const response = new Response(handlerInput)
     const attributes = handlerInput.attributesManager.getSessionAttributes()
+    const quiz = response.getQuiz()
     handlerInput.attributesManager.setSessionAttributes({
       state: attributes.state,
-      quiz: response.getQuiz()
+      quiz,
+      reservedQuiz: getReservedQuiz(attributes, quiz.name)
     })
-    const quiz = response.getQuiz()
     const reprompt = response.getRepropt()
     const speech = `${response.getSpeech()}${response.getNextAction()}`
     const skillName = response.getSkillName()
