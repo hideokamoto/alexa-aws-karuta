@@ -75,6 +75,24 @@ const getReservedQuiz = (attributes, quiz) => {
   return reservedQuiz
 }
 
+const getFinishedQuizResponse = handlerInput => {
+  const locale = getLocale(handlerInput)
+  const speech = {
+    'ja-JP': [
+      '全ての問題が終了しました。また遊んでくださいね。',
+      '全ての問題が終了しました。点数はどうでしたでしょうか？また遊んでくださいね。'
+    ],
+    'en-US': [
+      'Congratulations! The game is end ! Thanks for playing.',
+      'Congratulations! The game is end . See you again !'
+    ]
+  }
+  return handlerInput.responseBuilder
+    .speak(getRandomMessage(speech[locale]))
+    .withSimpleCard(getSkillName(locale), 'Thank you for playing :)')
+    .getResponse()
+}
+
 const KarutaIntenttHandler = {
   canHandle: (handlerInput) => {
     if (canHandle(handlerInput, 'IntentRequest', 'KarutaIntent')) return true
@@ -87,6 +105,10 @@ const KarutaIntenttHandler = {
     const response = new Response(handlerInput)
     const attributes = handlerInput.attributesManager.getSessionAttributes()
     const quiz = response.getQuiz()
+    console.log(quiz)
+    if (Object.keys(quiz).length === 0) {
+      return getFinishedQuizResponse(handlerInput)
+    }
     handlerInput.attributesManager.setSessionAttributes({
       state: attributes.state,
       quiz,

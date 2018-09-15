@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:integrations",
+    "test:unit": "./node_modules/.bin/mocha --require babel-core/register tests/unit/* -R spec --recursive",
     "test:integrations": "./node_modules/.bin/mocha --require babel-core/register tests/integrations/* -R spec --recursive",
     "lint": "./node_modules/.bin/eslint ."
   },
