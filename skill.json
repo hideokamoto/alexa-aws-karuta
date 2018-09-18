@@ -5,7 +5,7 @@
         "en-US": {
           "summary": "Simple Karuta game skill about AWS serivce, the skill made by JAWS-UG (Japan AWS User Group)",
           "examplePhrases": [
-            "Alexa open JAWS karuta",
+            "Alexa open cloud quiz game",
             "play karuta",
             "start the game"
           ],
@@ -21,7 +21,7 @@
         "ja-JP": {
           "summary": "AWSについて勉強できる、カルタゲーム made by JAWS-UGです。",
           "examplePhrases": [
-            "アレクサ、JAWSカルタを開いてゲームをはじめて",
+            "アレクサ、クラウドクイズゲームを開いてゲームをはじめて",
             "カルタ",
             "カルタをはじめて"
           ],
@@ -36,7 +36,7 @@
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "[en-US]\nAlexa, launch jaws karuta\nAlexa, launch jaws karuta start karuta game\nAlexa, launch jaws karuta start\n\n[ja-JP]アレクサ、ジョーズ カルタを開いて\nカルタを開始\nアレクサ、ジョーズカルタでゲーム開始",
+      "testingInstructions": "[en-US]\nAlexa, launch cloud quiz game\nAlexa, launch cloud quiz game start karuta game\nAlexa, launch cloud quiz game start\n\n[ja-JP]アレクサ、クラウドクイズゲームを開いて\nカルタを開始\nアレクサ、クラウドクイズゲームでゲーム開始",
       "category": "KNOWLEDGE_AND_TRIVIA",
       "distributionCountries": []
     },

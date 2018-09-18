@@ -7,9 +7,9 @@ export const STATES = {
 export const getSkillName = (locale) => {
   switch (locale) {
     case 'ja-JP':
-      return 'JAWS カルタ'
+      return 'クラウドクイズゲーム'
     case 'en-US':
     default:
-      return 'JAWS Karuta game'
+      return 'cloud quiz game'
   }
 }

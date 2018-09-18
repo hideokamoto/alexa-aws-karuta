@@ -1,7 +1,7 @@
 const Alexa = require('ask-sdk')
 const { getRandomMessage, canHandle } = require('ask-utils')
 const { getLocale } = require('./libs/utils')
-const { STATES } = require('./constants')
+const { STATES, SKILL_ID } = require('./constants')
 
 const skillBuilder = Alexa.SkillBuilders.standard()
 // handlers
@@ -132,6 +132,6 @@ exports.handler = skillBuilder
     StopSessionHandler,
     HelpHandler
   )
-  // .withSkillId('amzn1.ask.skill.f35b1223-1ed1-4283-a207-0e5d0fd2ff05')
+  .withSkillId(SKILL_ID)
   .addErrorHandlers(ErrorHandler)
   .lambda()
