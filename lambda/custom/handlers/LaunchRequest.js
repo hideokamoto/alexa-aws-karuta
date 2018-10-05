@@ -43,7 +43,7 @@ const LaunchRequestHandler = {
 
     const reprompt = response.getRepropt()
     const speech = response.getSpeech()
-    const skillName = response.getSkillName()
+    // const skillName = response.getSkillName()
 
     handlerInput.attributesManager.setSessionAttributes({
       state: STATES.start,
@@ -52,7 +52,7 @@ const LaunchRequestHandler = {
     return handlerInput.responseBuilder
       .speak(speech + reprompt)
       .reprompt(reprompt)
-      .withSimpleCard(skillName, speech)
+      // .withSimpleCard(skillName, speech)
       .getResponse()
   }
 }

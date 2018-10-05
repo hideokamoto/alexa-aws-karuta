@@ -103,7 +103,7 @@ const IntentHandler = {
     const response = new Response(handlerInput)
     const { quiz } = handlerInput.attributesManager.getSessionAttributes()
     const reprompt = response.getRepropt()
-    const skillName = response.getSkillName()
+    // const skillName = response.getSkillName()
     if (!quiz || !quiz.description) {
       handlerInput.attributesManager.setSessionAttributes({
         state: STATES.start
@@ -111,7 +111,7 @@ const IntentHandler = {
       return handlerInput.responseBuilder
         .speak(response.getUndefinedStateResponse())
         .reprompt(reprompt)
-        .withSimpleCard(skillName, quiz.name)
+        // .withSimpleCard(skillName, quiz.name)
         .getResponse()
     }
     response.setQuiz(quiz)
@@ -120,7 +120,7 @@ const IntentHandler = {
     const retVal = handlerInput.responseBuilder
       .speak(speech)
       .reprompt(reprompt)
-      .withSimpleCard(skillName, quiz.name)
+      // .withSimpleCard(skillName, quiz.name)
     if (Object.keys(directive).length > 0) retVal.addRenderTemplateDirective(directive)
     return retVal.getResponse()
   }

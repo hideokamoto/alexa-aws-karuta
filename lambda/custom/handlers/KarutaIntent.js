@@ -132,11 +132,11 @@ const KarutaIntenttHandler = {
     })
     const reprompt = response.getRepropt()
     const speech = `${response.getSpeech()}${response.getNextAction()}`
-    const skillName = response.getSkillName()
+    // const skillName = response.getSkillName()
     return handlerInput.responseBuilder
       .speak(speech)
       .reprompt(reprompt)
-      .withSimpleCard(skillName, quiz.description)
+      // .withSimpleCard(skillName, quiz.description)
       .getResponse()
   }
 }

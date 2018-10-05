@@ -91,7 +91,7 @@ const IntentHandler = {
     const response = new Response(handlerInput)
     const { state, quiz } = handlerInput.attributesManager.getSessionAttributes()
     const reprompt = response.getRepropt()
-    const skillName = response.getSkillName()
+    // const skillName = response.getSkillName()
     if (state !== STATES.start || !quiz || !quiz.description) {
       handlerInput.attributesManager.setSessionAttributes({
         state: STATES.start
@@ -99,7 +99,7 @@ const IntentHandler = {
       return handlerInput.responseBuilder
         .speak(response.getUndefinedStateResponse())
         .reprompt(reprompt)
-        .withSimpleCard(skillName, quiz.description)
+        // .withSimpleCard(skillName, quiz.description)
         .getResponse()
     }
     response.setQuiz(quiz)
@@ -107,7 +107,7 @@ const IntentHandler = {
     return handlerInput.responseBuilder
       .speak(speech)
       .reprompt(reprompt)
-      .withSimpleCard(skillName, quiz.description)
+      // .withSimpleCard(skillName, quiz.description)
       .getResponse()
   }
 }
